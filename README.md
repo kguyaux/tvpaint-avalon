@@ -1,7 +1,7 @@
-python-avalon
+# python-avalon
 -----------
 
-~under construction~
+_under construction_
 
 This project is dedicated to make TVPaint work with Avalon.
 It works by having special tvpaint-plugins that can be compiled with this project.
@@ -18,11 +18,11 @@ the stuff that is sent from TVPaint.
 
 
 
-## Download:
+### Download:
 `git clone dfgasfasdf --recurse-submodules`
 recurse-option is used to download a submodule that enables the plugins to write jsonstrings
 
-## The TVPaint-plugins
+### The TVPaint-plugins
 Cmake must be installed, and the TVPaint_SDK must be present also.
 You have to change these first lines of `plugins/CMakelists.txt` to let them point to where the TVP_sdk-stuff is located, by changing:  
 ```
@@ -32,7 +32,7 @@ set(TVP_SDK_INCLUDE <path of include-dir of TVP-sdk-folder>)
 ```
 
 To build these,  you must have cmake installed. For each system, do the following:
-### Linux
+#### Linux
 `cd python-avalon/build
 cmake ../
 make`
@@ -40,7 +40,7 @@ In the Cmakelists.txt-file you can see the install locations. Check it with your
 To install the plugins into tvpaint(so that they load when tvpaint starts):
 `sudo make install`
 
-### Windows
+#### Windows
 I have not tested it on windows yet. One way I know is to install the Windows-version of Cmake and generate
 a VisualStudio-solution-project, that can be opened & built from within VS.
 I don't know where the pluigns will end up, but when you found them, you can copy them nanually to your TVPaint-pluginfolder :-)
