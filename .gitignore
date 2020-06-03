@@ -1,0 +1,7 @@
+*.sw[po]
+build/
+Session.vim
+Pipfile
+Pipfile.lock
+trash/
+plugins/.ycm_extra_config

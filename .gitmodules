@@ -1,0 +1,3 @@
+[submodule "plugins/external/jWrite"]
+	path = plugins/external/jWrite
+	url = https://github.com/jonaskgandersson/jWrite.git
