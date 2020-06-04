@@ -7,7 +7,7 @@ python-scripts. These pythonscripts should further integrate TVPaint with Avalon
 
 This project is very much in progress, parts are still in the proof-of-concept-fase. It has been mainly tested on fedora(linux). So you can say it is still in the testing-fase.
 In my testing-env I have the module `avalon-core` & `pyblish`, etc. pointed to, by putting it in $PYTHONPATH  
-the rest of the dependacies are in `requirements.txt`
+the rest of the dependancies are in `requirements.txt`
 
 ### Download:
 `git clone https://github.com/kguyaux/tvpaint-avalon.git --recurse-submodules`  
