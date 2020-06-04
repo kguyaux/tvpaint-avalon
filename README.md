@@ -14,7 +14,11 @@ the rest of the dependancies are in `requirements.txt`
 The recurse-option is used to download a submodule that enables the plugins to write jsonstrings
 
 ### Usage
-To have it working, you must first compile&install, then launch tvpaint with the wrapper, like this:  
+To have it working, you must first compile&install the plugins(see below).
+You also should clone the tvpaint-branch of avalon-core:
+`git clone -b tvpaint --single-branch https://github.com/kguyaux/core.git`  
+& add it to your pythonpath, for example.. (`export PYTHONPATH=$PYTHONPATH:/home/me/projects/avalon-core`)
+..then launch tvpaint with the wrapper, like this:  
 `python3 pytvpaint_avalon/launch.py`  
 The wrapper imports all the necessary avalon-stuff, and also starts the socket-server that handles
 the stuff that is sent from TVPaint.
