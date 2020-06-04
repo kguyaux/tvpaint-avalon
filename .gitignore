@@ -4,4 +4,5 @@ Session.vim
 Pipfile
 Pipfile.lock
 trash/
+__pycache__/
 plugins/.ycm_extra_config

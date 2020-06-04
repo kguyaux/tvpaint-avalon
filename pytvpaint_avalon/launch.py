@@ -16,6 +16,8 @@ from avalon.tools import creator
 import pyblish.api
 from avalon.vendor.Qt import QtWidgets
 from avalon import api
+import avalon.tvpaint                                                   
+                                                                        
 
 #from avalon.vendor.Qt.QtNetwork import *
 import pytvpaint_avalon.functions as tvp
@@ -85,7 +87,7 @@ class MyRequestHandler(socketserver.BaseRequestHandler):
 
 
 def run_any_startupscript():
-    if 'PYTHONTVPAINT_STARTUPSCRIPT' in os.environ:
+    if os.getenv("PYTHONTVPAINT_STARTUPSCRIPT") is not None:
         startupscript = os.environ['PYTHONTVPAINT_STARTUPSCRIPT']
         try:
             spec = importlib.util.spec_from_file_location("jaja", startupscript)
@@ -111,8 +113,8 @@ if __name__ == "__main__":
         program_exec = os.environ['TVPAINT_EXEC']
     else:
         program_exec = "/usr/share/tvpaint-developpement/tvp-animation-11-pro/tvp-animation-11-pro"
-    run_any_startupscript()
 
+    run_any_startupscript()
     socketserver.TCPServer.allow_reuse_address = True
     wrapperserver = socketserver.TCPServer(("127.0.0.1", 4242), MyRequestHandler)
 
@@ -128,6 +130,7 @@ if __name__ == "__main__":
         pass
 
     wrapperserver.server_close()
+
     ret = tvprocess.wait()
     sys.stdout.write("TVPaint ended with returncode: %d\n" % ret)
     sys.stdout.flush()

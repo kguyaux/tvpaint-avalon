@@ -20,6 +20,7 @@ def connection(commandfunc):
 
         msg = commandfunc(*args, **kwargs)
         sock.sendall(bytes(msg, encoding='ascii'))
+        
         response = sock.recv(1024)
         return str(response, encoding="utf-8")
     return connect
